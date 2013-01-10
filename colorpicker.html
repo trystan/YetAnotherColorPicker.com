@@ -209,8 +209,18 @@
 
         for (var i = 1; i < 19; i++)
           $("#h" + i).animate({ backgroundColor: hsv((270 + i * 16) % 360, s, v) }, speed).attr("title", hsv((270 + i * 16) % 360, s, v));
-        for (var i = 1; i < 10; i++)
-          $("#s" + i).animate({ backgroundColor: hsv(h, i * 0.1, v1) }, speed).attr("title", hsv(h, i * 0.1, v1));
+        var rgb = hexToRgb($("#hex").val());
+        $("#s1").animate({ backgroundColor: lerp_rgb(0, rgb[0], 0, rgb[1], 0, rgb[2], 0.8) }, speed);
+        $("#s4").animate({ backgroundColor: lerp_rgb(0, rgb[0], 0, rgb[1], 0, rgb[2], 0.5) }, speed);
+        $("#s7").animate({ backgroundColor: lerp_rgb(0, rgb[0], 0, rgb[1], 0, rgb[2], 0.2) }, speed);
+
+        $("#s2").animate({ backgroundColor: lerp_rgb(128, rgb[0], 128, rgb[1], 128, rgb[2], 0.8) }, speed);
+        $("#s5").animate({ backgroundColor: lerp_rgb(128, rgb[0], 128, rgb[1], 128, rgb[2], 0.5) }, speed);
+        $("#s8").animate({ backgroundColor: lerp_rgb(128, rgb[0], 128, rgb[1], 128, rgb[2], 0.2) }, speed);
+
+        $("#s3").animate({ backgroundColor: lerp_rgb(255, rgb[0], 255, rgb[1], 255, rgb[2], 0.8) }, speed);
+        $("#s6").animate({ backgroundColor: lerp_rgb(255, rgb[0], 255, rgb[1], 255, rgb[2], 0.5) }, speed);
+        $("#s9").animate({ backgroundColor: lerp_rgb(255, rgb[0], 255, rgb[1], 255, rgb[2], 0.2) }, speed);
         for (var i = 1; i < 10; i++)
           $("#s" + (i+9)).animate({ backgroundColor: hsv(h, i * 0.1, v2) }, speed).attr("title", hsv(h, i * 0.1, v2));
         for (var i = 1; i < 10; i++)
@@ -237,6 +247,9 @@
       function lerp(v1, v2, p) {
         return v1 * p + v2 * (1 - p);
       }
+      function lerp_rgb(r1, r2, g1, g2, b1, b2, p) {
+        return rgb_f(lerp(r1, r2, p)/255,lerp(g1, g2, p)/255,lerp(b1, b2, p)/255);
+      }
       function setLocation(c) {
         window.location.href = window.location.href.split("#")[0] + c;
       }
@@ -250,21 +263,28 @@
         else
         {
           c = (c.replace(/[^0-9a-f]/g,"") + "000000").substring(0,6);
-          var r = parseInt(c.substring(0,2),16);
-          var g = parseInt(c.substring(2,4),16);
-          var b = parseInt(c.substring(4,6),16);
+          var rgb = hexToRgb(c);
           var hsv = rgbToHsv(r, g, b);
           recolor(hsv[0] * 360, hsv[1], hsv[2]);
         }
+      }
+      function hexToRgb(hex){
+          var r = parseInt(hex.substring(0,2),16);
+          var g = parseInt(hex.substring(2,4),16);
+          var b = parseInt(hex.substring(4,6),16);
+          return [r, g, b];
+      }
+      function splitRgb(rgb){
+          var r = rgb.split(",")[0].replace(/[^0-9]/g,"");
+          var g = rgb.split(",")[1].replace(/[^0-9]/g,"");
+          var b = rgb.split(",")[2].replace(/[^0-9]/g,"");
+          return [r, g, b];
       }
       $(function (){
         fromLocation();
 
         $(".box").on('click', function(){
-          var bg = $(this).css('backgroundColor');
-          var r = bg.split(",")[0].replace(/[^0-9]/g,"");
-          var g = bg.split(",")[1].replace(/[^0-9]/g,"");
-          var b = bg.split(",")[2].replace(/[^0-9]/g,"");
+          var rgb = splitRgb($(this).css('backgroundColor'))
           var components = rgbToHsv(r, g, b);
           setLocation(hsv(components[0] * 360, components[1], components[2]));
           recolor(components[0] * 360, components[1], components[2]);

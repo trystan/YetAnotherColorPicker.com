@@ -264,7 +264,7 @@
         {
           c = (c.replace(/[^0-9a-f]/g,"") + "000000").substring(0,6);
           var rgb = hexToRgb(c);
-          var hsv = rgbToHsv(r, g, b);
+          var hsv = rgbToHsv(rgb[0], rgb[1], rgb[2]);
           recolor(hsv[0] * 360, hsv[1], hsv[2]);
         }
       }
@@ -285,16 +285,14 @@
 
         $(".box").on('click', function(){
           var rgb = splitRgb($(this).css('backgroundColor'))
-          var components = rgbToHsv(r, g, b);
+          var components = rgbToHsv(rgb[0], rgb[1], rgb[2]);
           setLocation(hsv(components[0] * 360, components[1], components[2]));
           recolor(components[0] * 360, components[1], components[2]);
         });
         $("#rgb").on('keyup', function(){
           $(this).val(($(this).val().replace(/[^0-9a-f]/g,"") + "000000").substring(0,6));
-          var r = $(this).val().substring(0,2);
-          var g = $(this).val().substring(2,4);
-          var b = $(this).val().substring(4,6);
-          var components = rgbToHsv(r, g, b);
+          var rgb = hexToRgb($(this).val());
+          var components = rgbToHsv(rgb[0], rgb[1], rgb[2]);
           recolor(components[0] * 360, components[1], components[2])
         });
         $("#h").on('keyup', function(){

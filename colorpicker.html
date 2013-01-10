@@ -73,10 +73,10 @@
       <div id='s18' class="box"></div>
 
       <div class="big-box" style='margin-right:18px;'>
-            hex: <input id="hex"></input><br />
-            h: <input id="h"></input><br />
-            s: <input id="s"></input><br />
-            v: <input id="v"></input>
+            # <input id="hex"></input><br />
+            h <input id="h"></input><br />
+            s <input id="s"></input><br />
+            v <input id="v"></input>
       </div>
       <div id='c' class="big-box" style="margin-right:4px;"></div>
 
@@ -202,7 +202,7 @@
         var v2 = 0.9;
 
         $("#c").animate({ backgroundColor: hsv(h, s, v) }, speed);
-        $("#hex").val(hsv(h, s, v).substring(1,6).toUpperCase());
+        $("#hex").val(hsv(h, s, v).substring(1,7).toUpperCase());
         $("#h").val(h);
         $("#s").val(s * 100);
         $("#v").val(v * 100);

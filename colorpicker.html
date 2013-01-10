@@ -208,7 +208,8 @@
         $("#v").val(v * 100);
 
         for (var i = 1; i < 19; i++)
-          $("#h" + i).animate({ backgroundColor: hsv((270 + i * 16) % 360, s, v) }, speed).attr("title", hsv((270 + i * 16) % 360, s, v));
+          $("#h" + i).animate({ backgroundColor: hsv((i * 16) % 360, s, v) }, speed).attr("title", hsv((i * 16) % 360, s, v));
+
         var rgb = hexToRgb($("#hex").val());
         $("#s1").animate({ backgroundColor: lerp_rgb(0, rgb[0], 0, rgb[1], 0, rgb[2], 0.8) }, speed);
         $("#s4").animate({ backgroundColor: lerp_rgb(0, rgb[0], 0, rgb[1], 0, rgb[2], 0.5) }, speed);
@@ -228,17 +229,19 @@
         for (var i = 1; i < 10; i++)
           $("#v" + (i+9)).animate({ backgroundColor: hsv(h, s2, i * 0.1) }, speed).attr("title", hsv(h, s2, i * 0.1));
 
+
+        var prgb = hexToRgb(hsv(ph, ps, pv).substring(1,7).toUpperCase());
         if (isEven)
         {
           for (var i = 1; i < 10; i++) {
-            var c = hsv(lerp(ph, h, i/10), lerp(ps, s, i/10), lerp(pv, v, i/10));
+            var c = lerp_rgb(rgb[0], prgb[0], rgb[1], prgb[1], rgb[2], prgb[2], i/10);
             $("#c" + i).animate({ backgroundColor: c }, speed).attr("title", c);
           }
         }
         else
         {
           for (var i = 1; i < 10; i++) {
-            var c = hsv(lerp(h, ph, i/10), lerp(s, ps, i/10), lerp(v, pv, i/10));
+            var c = lerp_rgb(prgb[0], rgb[0], prgb[1], rgb[1], prgb[2], rgb[2], i/10);
             $("#c" + i).animate({ backgroundColor: c }, speed).attr("title", c);
           }
         }

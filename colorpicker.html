@@ -9,7 +9,6 @@
     #boxes {
       text-align: left;
       width:484px;
-      height:550px;
       margin:0 auto 0 auto;
     }
     .box {
@@ -106,35 +105,35 @@
       <div id='m14' class="box"></div>
       <div id='m15' class="box"></div>
 
-      <div id='h1' class="box"></div>
-      <div id='h2' class="box"></div>
-      <div id='h3' class="box"></div>
-      <div id='h4' class="box"></div>
-      <div id='h5' class="box"></div>
-      <div id='h6' class="box"></div>
-      <div id='h7' class="box"></div>
-      <div id='h8' class="box"></div>
-      <div id='h9' class="box"></div>
+      <div id='dh1' class="box"></div>
+      <div id='dh2' class="box"></div>
+      <div id='dh3' class="box"></div>
+      <div id='dh4' class="box"></div>
+      <div id='dh5' class="box"></div>
+      <div id='dh6' class="box"></div>
+      <div id='dh7' class="box"></div>
+      <div id='dh8' class="box"></div>
+      <div id='dh9' class="box"></div>
 
-      <div id='h10' class="box"></div>
-      <div id='h11' class="box"></div>
-      <div id='h12' class="box"></div>
-      <div id='h13' class="box"></div>
-      <div id='h14' class="box"></div>
-      <div id='h15' class="box"></div>
-      <div id='h16' class="box"></div>
-      <div id='h17' class="box"></div>
-      <div id='h18' class="box"></div>
+      <div id='dh10' class="box"></div>
+      <div id='dh11' class="box"></div>
+      <div id='dh12' class="box"></div>
+      <div id='dh13' class="box"></div>
+      <div id='dh14' class="box"></div>
+      <div id='dh15' class="box"></div>
+      <div id='dh16' class="box"></div>
+      <div id='dh17' class="box"></div>
+      <div id='dh18' class="box"></div>
 
-      <div id='h19' class="box"></div>
-      <div id='h20' class="box"></div>
-      <div id='h21' class="box"></div>
-      <div id='h22' class="box"></div>
-      <div id='h23' class="box"></div>
-      <div id='h24' class="box"></div>
-      <div id='h25' class="box"></div>
-      <div id='h26' class="box"></div>
-      <div id='h27' class="box"></div>
+      <div id='dh19' class="box"></div>
+      <div id='dh20' class="box"></div>
+      <div id='dh21' class="box"></div>
+      <div id='dh22' class="box"></div>
+      <div id='dh23' class="box"></div>
+      <div id='dh24' class="box"></div>
+      <div id='dh25' class="box"></div>
+      <div id='dh26' class="box"></div>
+      <div id='dh27' class="box"></div>
 
 
       <div id='c1' class="box"></div>
@@ -146,6 +145,16 @@
       <div id='c7' class="box"></div>
       <div id='c8' class="box"></div>
       <div id='c9' class="box"></div>
+
+      <div id='p1' class="box"></div>
+      <div id='p2' class="box"></div>
+      <div id='p3' class="box"></div>
+      <div id='p4' class="box"></div>
+      <div id='p5' class="box"></div>
+      <div id='p6' class="box"></div>
+      <div id='p7' class="box"></div>
+      <div id='p8' class="box"></div>
+      <div id='p9' class="box"></div>
     </div>
     <div id='footer'><a href='https://github.com/trystan/YetAnotherColorPicker.com'>GitHub project</a> &middot; Trystan Spangler &middot; 2013</div>
 
@@ -258,7 +267,7 @@
         for (var i = 1; i < 28; i++)
         {
           var c = hsv(i/28 * 360, (0.75 + s) / 2, (0.75 + v) / 2);
-          $("#h" + i).animate({ backgroundColor: c }, speed).attr("title", c);
+          $("#dh" + i).animate({ backgroundColor: c }, speed).attr("title", c);
         }
 
         // lerp to black, gray, white
@@ -272,39 +281,46 @@
           $(id).animate({ backgroundColor: c }, speed).attr("title", c);
         }
 
+        // lerp to red
         for (var i = 1; i < 4; i++)
         {
           var c = lerp_rgb(rgb[0], 255, rgb[1], 0, rgb[2], 0, i/4);
           $("#m" + i).animate({ backgroundColor: c }, speed).attr("title", c);
         }
+        // lerp to anti-red
         for (var i = 1; i < 4; i++)
         {
           var c = lerp_rgb(0, rgb[0], 128, rgb[1], 255, rgb[2], i/4);
           $("#m" + (3+i)).animate({ backgroundColor: c }, speed).attr("title", c);
         }
 
+        // lerp to orange
         for (var i = 1; i < 4; i++)
         {
           var c = lerp_rgb(rgb[0], 230, rgb[1], 115, rgb[2], 0, i/4);
           $("#m" + (6+i)).animate({ backgroundColor: c }, speed).attr("title", c);
         }
+        // lerp to anti-orange
         for (var i = 1; i < 4; i++)
         {
           var c = lerp_rgb(43, rgb[0], 0, rgb[1], 255, rgb[2], i/4);
           $("#m" + (9+i)).animate({ backgroundColor: c }, speed).attr("title", c);
         }
 
+        // lerp to yellow
         for (var i = 1; i < 4; i++)
         {
           var c = lerp_rgb(rgb[0], 255, rgb[1], 255, rgb[2], 0, i/4);
           $("#m" + (12+i)).animate({ backgroundColor: c }, speed).attr("title", c);
         }
+        // lerp to anti-yellow
         for (var i = 1; i < 4; i++)
         {
           var c = lerp_rgb(128, rgb[0], 0, rgb[1], 255, rgb[2], i/4);
           $("#m" + (15+i)).animate({ backgroundColor: c }, speed).attr("title", c);
         }
 
+        // lerp to previous color
         var prgb = hexToRgb(hsv(ph, ps, pv).substring(1,7).toUpperCase());
         if (isEven)
         {
@@ -321,6 +337,23 @@
           }
         }
         isEven = !isEven;
+
+        // add current color
+        var added = false
+        for (var i = 1; i < 10 && added == false; i++) {
+          if ($("#p" + i).css("backgroundColor") == "transparent")
+          {
+            $("#p" + i).css("backgroundColor", hsv(h, s, v));
+            added = true;
+          } else if ($("#p" + i).css("backgroundColor") == hsv(h, s, v)) {
+            added = true;
+          }
+        }
+        if (!added) {
+          for (var i = 1; i < 9; i++)
+            $("#p" + i).css("backgroundColor", $("#p" + (i+1)).css("backgroundColor"));
+          $("#p9").css("backgroundColor", hsv(h, s, v));
+        }
       }
       function lerp(v1, v2, p) {
         return v1 * p + v2 * (1 - p);

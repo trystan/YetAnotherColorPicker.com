@@ -187,9 +187,6 @@
         return [h, s, v];
       }
       function hsv(h, s, v) {
-        h = h % 360;
-        s = ((s * 100) % 100) / 100;
-        v = ((v * 100) % 100) / 100;
         var i, f, p, q, t;
         if(s == 0) 
           return rgb_f(v,v,v);
@@ -370,23 +367,28 @@
           setLocation(hsv(components[0] * 360, components[1], components[2]));
           recolor(components[0] * 360, components[1], components[2]);
         });
-        $("#rgb").on('keyup', function(){
+        $("#hex").on('blur', function(){
           $(this).val(($(this).val().replace(/[^0-9a-f]/g,"") + "000000").substring(0,6));
           var rgb = hexToRgb($(this).val());
           var components = rgbToHsv(rgb[0], rgb[1], rgb[2]);
           recolor(components[0] * 360, components[1], components[2])
         });
-        $("#h").on('keyup', function(){
+        $("#h").on('blur', function(){
           $(this).val($(this).val().replace(/[^0-9]/g,""));
           recolor(0 + $(this).val(), s, v);
         });
-        $("#s").on('keyup', function(){
+        $("#s").on('blur', function(){
           $(this).val($(this).val().replace(/[^0-9]/g,""));
           recolor(h, (0 + $(this).val()) / 100, v);
         });
-        $("#v").on('keyup', function(){
+        $("#v").on('blur', function(){
           $(this).val($(this).val().replace(/[^0-9]/g,""));
           recolor(h, s, (0 + $(this).val()) / 100);
+        });
+        $("#r,#g,#b").on('blur', function(){
+          $(this).val((0 + $(this).val().replace(/[^0-9]/g,"")) * 1);
+          var hsv = rgbToHsv($("#r").val(), $("#g").val(), $("#b").val())
+          recolor(hsv[0] * 360, hsv[1], hsv[2]);
         });
       });
     </script>

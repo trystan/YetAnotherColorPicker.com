@@ -8,7 +8,7 @@
     }
     #boxes {
       text-align: left;
-      width:485px;
+      width:484px;
       height:550px;
       margin:0 auto 0 auto;
     }
@@ -30,10 +30,9 @@
       display:inline-block;
     }
     .big-box input {
-      width:60px;
+      width:30px;
       margin-top:8px;
-      border:0;
-      border-bottom:1px solid black;
+      border:1px solid black;
     }
     #footer {
       text-align: center;
@@ -44,35 +43,35 @@
   </head>
   <body>
     <div id="boxes">
-      <div id='x1' class="box"></div>
-      <div id='x2' class="box"></div>
-      <div id='x3' class="box"></div>
-      <div id='s1' class="box"></div>
-      <div id='s2' class="box"></div>
-      <div id='s3' class="box"></div>
-      <div id='y1' class="box"></div>
-      <div id='y2' class="box"></div>
-      <div id='y3' class="box"></div>
+      <div id='dv1' class="box"></div>
+      <div id='dv2' class="box"></div>
+      <div id='dv3' class="box"></div>
+      <div id='l1' class="box"></div>
+      <div id='l2' class="box"></div>
+      <div id='l3' class="box"></div>
+      <div id='ds1' class="box"></div>
+      <div id='ds2' class="box"></div>
+      <div id='ds3' class="box"></div>
 
-      <div id='x4' class="box"></div>
-      <div id='x5' class="box"></div>
-      <div id='x6' class="box"></div>
-      <div id='s4' class="box"></div>
-      <div id='s5' class="box"></div>
-      <div id='s6' class="box"></div>
-      <div id='y4' class="box"></div>
-      <div id='y5' class="box"></div>
-      <div id='y6' class="box"></div>
+      <div id='dv4' class="box"></div>
+      <div id='dv5' class="box"></div>
+      <div id='dv6' class="box"></div>
+      <div id='l4' class="box"></div>
+      <div id='l5' class="box"></div>
+      <div id='l6' class="box"></div>
+      <div id='ds4' class="box"></div>
+      <div id='ds5' class="box"></div>
+      <div id='ds6' class="box"></div>
 
-      <div id='x7' class="box"></div>
-      <div id='x8' class="box"></div>
-      <div id='x9' class="box"></div>
-      <div id='s7' class="box"></div>
-      <div id='s8' class="box"></div>
-      <div id='s9' class="box"></div>
-      <div id='y7' class="box"></div>
-      <div id='y8' class="box"></div>
-      <div id='y9' class="box"></div>
+      <div id='dv7' class="box"></div>
+      <div id='dv8' class="box"></div>
+      <div id='dv9' class="box"></div>
+      <div id='l7' class="box"></div>
+      <div id='l8' class="box"></div>
+      <div id='l9' class="box"></div>
+      <div id='ds7' class="box"></div>
+      <div id='ds8' class="box"></div>
+      <div id='ds9' class="box"></div>
 
       <div class="big-box" style="margin-right:18px">
         <div id='m4' class="box"></div>
@@ -89,10 +88,10 @@
       </div>
 
       <div id='c' class="big-box" style="margin-right:4px">
-        # <input id="hex"></input><br />
-        h <input id="h"></input><br />
-        s <input id="s"></input><br />
-        v <input id="v"></input>
+        &nbsp;&nbsp;# <input id="hex" style="width:60px"></input><br />
+        &nbsp;&nbsp;h <input id="h"/>&nbsp;&nbsp;&nbsp;r <input id="r"/><br />
+        &nbsp;&nbsp;s <input id="s"/>&nbsp;&nbsp;&nbsp;g <input id="g"/><br />
+        &nbsp;&nbsp;v <input id="v"/>&nbsp;&nbsp;&nbsp;b <input id="b"/><br />
       </div>
 
       <div id='m1' class="box"></div>
@@ -230,9 +229,9 @@
         $("#c").animate({ backgroundColor: hsv(h, s, v) }, speed);
         $("#c input").animate({ backgroundColor: hsv(h, s, v) }, speed);
         if (v < 0.5)
-          $("#c, #c input").animate({ color: "#eeeeee", borderColor:"#ffffff" }, speed);
+          $("#c, #c input").animate({ color: "#eeeeee", border:"#ffffff" }, speed);
         else
-          $("#c, #c input").animate({ color: "#111111", borderColor:"#000000" }, speed);
+          $("#c, #c input").animate({ color: "#111111", border:"#000000" }, speed);
 
         $("#hex").val(hsv(h, s, v).substring(1,7).toUpperCase());
         $("#h").val(h);
@@ -240,31 +239,38 @@
         $("#v").val(Math.round(v * 100));
 
         var rgb = hexToRgb($("#hex").val());
+        $("#r").val(rgb[0]);
+        $("#g").val(rgb[1]);
+        $("#b").val(rgb[2]);
 
+        // different value
         for (var i = 1; i < 10; i++)
         {
           var c = hsv(h, s, i/10);
-          $("#x" + i).animate({ backgroundColor: c }, speed).attr("title", c);
+          $("#dv" + i).animate({ backgroundColor: c }, speed).attr("title", c);
         }
 
+        // different saturation
         for (var i = 1; i < 10; i++)
         {
           var c = hsv(h, i/10, v);
-          $("#y" + i).animate({ backgroundColor: c }, speed).attr("title", c);
+          $("#ds" + i).animate({ backgroundColor: c }, speed).attr("title", c);
         }
 
+        // different hue
         for (var i = 1; i < 28; i++)
         {
           var c = hsv(i/28 * 360, (0.75 + s) / 2, (0.75 + v) / 2);
           $("#h" + i).animate({ backgroundColor: c }, speed).attr("title", c);
         }
 
+        // lerp to black, gray, white
         for (var row = 0; row < 3; row++)
         for (var col = 0; col < 3; col++)
         {
           var from = (col+1)/4 * 255;
           var amount = [0.8,0.5,0.2][row];
-          var id = "#s" + (row * 3 + col + 1);
+          var id = "#l" + (row * 3 + col + 1);
           var c = lerp_rgb(from, rgb[0], from, rgb[1], from, rgb[2], amount);
           $(id).animate({ backgroundColor: c }, speed).attr("title", c);
         }

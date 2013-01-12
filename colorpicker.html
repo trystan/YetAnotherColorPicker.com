@@ -6,29 +6,16 @@
     body { 
       text-align: center;
     }
-    #boxes {
+    table {
       text-align: left;
-      width:484px;
       margin:0 auto 0 auto;
     }
-    .box {
-      border:0;
-      padding:0;
-      margin:-1px;
+    td {
+      vertical-align: center;
       width:50px;
       height:50px;
-      display:inline-block;
     }
-    .big-box {
-      border:0;
-      padding:0;
-      margin:-1px;
-      float:right;
-      width:154px;
-      height:154px;
-      display:inline-block;
-    }
-    .big-box input {
+    input {
       width:30px;
       margin-top:8px;
       border:1px solid black;
@@ -41,121 +28,171 @@
     </style>
   </head>
   <body>
-    <div id="boxes">
-      <div id='dv1' class="box"></div>
-      <div id='dv2' class="box"></div>
-      <div id='dv3' class="box"></div>
-      <div id='l1' class="box"></div>
-      <div id='l2' class="box"></div>
-      <div id='l3' class="box"></div>
-      <div id='ds1' class="box"></div>
-      <div id='ds2' class="box"></div>
-      <div id='ds3' class="box"></div>
+    <table cellspacing=1>
+      <tr>
+        <td id='dv1'/>
+        <td id='dv2' class='box'/>
+        <td id='dv3' class='box'/>
+        <td id='dv4' class='box'/>
+        <td id='dv5' class='box'/>
+        <td id='l1' class='box'/>
+        <td id='l2' class='box'/>
+        <td id='l3' class='box'/>
+        <td id='ds1' class='box'/>
+        <td id='ds2' class='box'/>
+        <td id='ds3' class='box'/>
+        <td id='ds4' class='box'/>
+        <td id='ds5' class='box'/>
+      </tr>
+      <tr>
+        <td id='dv6' class='box'/>
+        <td id='dv7' class='box'/>
+        <td id='dv8' class='box'/>
+        <td id='dv9' class='box'/>
+        <td id='dv10' class='box'/>
+        <td id='l4' class='box'/>
+        <td id='l5' class='box'/>
+        <td id='l6' class='box'/>
+        <td id='ds6' class='box'/>
+        <td id='ds7' class='box'/>
+        <td id='ds8' class='box'/>
+        <td id='ds9' class='box'/>
+        <td id='ds10' class='box'/>
+      </tr>
+      <tr>
+        <td id='dv11' class='box'/>
+        <td id='dv12' class='box'/>
+        <td id='dv13' class='box'/>
+        <td id='dv14' class='box'/>
+        <td id='dv15' class='box'/>
+        <td id='l7' class='box'/>
+        <td id='l8' class='box'/>
+        <td id='l9' class='box'/>
+        <td id='ds11' class='box'/>
+        <td id='ds12' class='box'/>
+        <td id='ds13' class='box'/>
+        <td id='ds14' class='box'/>
+        <td id='ds15' class='box'/>
+      </tr>
 
-      <div id='dv4' class="box"></div>
-      <div id='dv5' class="box"></div>
-      <div id='dv6' class="box"></div>
-      <div id='l4' class="box"></div>
-      <div id='l5' class="box"></div>
-      <div id='l6' class="box"></div>
-      <div id='ds4' class="box"></div>
-      <div id='ds5' class="box"></div>
-      <div id='ds6' class="box"></div>
-
-      <div id='dv7' class="box"></div>
-      <div id='dv8' class="box"></div>
-      <div id='dv9' class="box"></div>
-      <div id='l7' class="box"></div>
-      <div id='l8' class="box"></div>
-      <div id='l9' class="box"></div>
-      <div id='ds7' class="box"></div>
-      <div id='ds8' class="box"></div>
-      <div id='ds9' class="box"></div>
-
-      <div class="big-box" style="margin-right:18px">
-        <div id='m4' class="box"></div>
-        <div id='m5' class="box"></div>
-        <div id='m6' class="box"></div>
-
-        <div id='m10' class="box"></div>
-        <div id='m11' class="box"></div>
-        <div id='m12' class="box"></div>
-
-        <div id='m16' class="box"></div>
-        <div id='m17' class="box"></div>
-        <div id='m18' class="box"></div>
-      </div>
-
-      <div id='c' class="big-box" style="margin-right:4px">
-        &nbsp;&nbsp;# <input id="hex" style="width:60px"></input><br />
-        &nbsp;&nbsp;h <input id="h"/>&nbsp;&nbsp;&nbsp;r <input id="r"/><br />
-        &nbsp;&nbsp;s <input id="s"/>&nbsp;&nbsp;&nbsp;g <input id="g"/><br />
-        &nbsp;&nbsp;v <input id="v"/>&nbsp;&nbsp;&nbsp;b <input id="b"/><br />
-      </div>
-
-      <div id='m1' class="box"></div>
-      <div id='m2' class="box"></div>
-      <div id='m3' class="box"></div>
-
-      <div id='m7' class="box"></div>
-      <div id='m8' class="box"></div>
-      <div id='m9' class="box"></div>
-
-      <div id='m13' class="box"></div>
-      <div id='m14' class="box"></div>
-      <div id='m15' class="box"></div>
-
-      <div id='dh1' class="box"></div>
-      <div id='dh2' class="box"></div>
-      <div id='dh3' class="box"></div>
-      <div id='dh4' class="box"></div>
-      <div id='dh5' class="box"></div>
-      <div id='dh6' class="box"></div>
-      <div id='dh7' class="box"></div>
-      <div id='dh8' class="box"></div>
-      <div id='dh9' class="box"></div>
-
-      <div id='dh10' class="box"></div>
-      <div id='dh11' class="box"></div>
-      <div id='dh12' class="box"></div>
-      <div id='dh13' class="box"></div>
-      <div id='dh14' class="box"></div>
-      <div id='dh15' class="box"></div>
-      <div id='dh16' class="box"></div>
-      <div id='dh17' class="box"></div>
-      <div id='dh18' class="box"></div>
-
-      <div id='dh19' class="box"></div>
-      <div id='dh20' class="box"></div>
-      <div id='dh21' class="box"></div>
-      <div id='dh22' class="box"></div>
-      <div id='dh23' class="box"></div>
-      <div id='dh24' class="box"></div>
-      <div id='dh25' class="box"></div>
-      <div id='dh26' class="box"></div>
-      <div id='dh27' class="box"></div>
-
-
-      <div id='c1' class="box"></div>
-      <div id='c2' class="box"></div>
-      <div id='c3' class="box"></div>
-      <div id='c4' class="box"></div>
-      <div id='c5' class="box"></div>
-      <div id='c6' class="box"></div>
-      <div id='c7' class="box"></div>
-      <div id='c8' class="box"></div>
-      <div id='c9' class="box"></div>
-
-      <div id='p1' class="box"></div>
-      <div id='p2' class="box"></div>
-      <div id='p3' class="box"></div>
-      <div id='p4' class="box"></div>
-      <div id='p5' class="box"></div>
-      <div id='p6' class="box"></div>
-      <div id='p7' class="box"></div>
-      <div id='p8' class="box"></div>
-      <div id='p9' class="box"></div>
-    </div>
+      <tr>
+        <td id='m1' class='box'/>
+        <td id='m2' class='box'/>
+        <td id='m3' class='box'/>
+        <td id='m4' class='box'/>
+        <td id='m5' class='box'/>
+        <td id='c' colspan=3 rowspan=3 style='padding:0.5em'>
+          # <input id="hex" style="width:60px"></input><br />
+          h <input id="h"/>&nbsp;r <input id="r"/><br />
+          s <input id="s"/>&nbsp;g <input id="g"/><br />
+          v <input id="v"/>&nbsp;b <input id="b"/><br />
+        </td>
+        <td id='m6' class='box'/>
+        <td id='m7' class='box'/>
+        <td id='m8' class='box'/>
+        <td id='m9' class='box'/>
+        <td id='m10' class='box'/>
+      </tr>
+      <tr>
+        <td id='m11' class='box'/>
+        <td id='m12' class='box'/>
+        <td id='m13' class='box'/>
+        <td id='m14' class='box'/>
+        <td id='m15' class='box'/>
+        <td id='m16' class='box'/>
+        <td id='m17' class='box'/>
+        <td id='m18' class='box'/>
+        <td id='m19' class='box'/>
+        <td id='m20' class='box'/>
+      </tr>
+      <tr>
+        <td id='m21' class='box'/>
+        <td id='m22' class='box'/>
+        <td id='m23' class='box'/>
+        <td id='m24' class='box'/>
+        <td id='m25' class='box'/>
+        <td id='m26' class='box'/>
+        <td id='m27' class='box'/>
+        <td id='m28' class='box'/>
+        <td id='m29' class='box'/>
+        <td id='m30' class='box'/>
+      </tr>
+      <tr>
+        <td id='dh1' class='box'/>
+        <td id='dh2' class='box'/>
+        <td id='dh3' class='box'/>
+        <td id='dh4' class='box'/>
+        <td id='dh5' class='box'/>
+        <td id='dh6' class='box'/>
+        <td id='dh7' class='box'/>
+        <td id='dh8' class='box'/>
+        <td id='dh9' class='box'/>
+        <td id='dh10' class='box'/>
+        <td id='dh11' class='box'/>
+        <td id='dh12' class='box'/>
+        <td id='dh13' class='box'/>
+      </tr>
+      <tr>
+        <td id='dh14' class='box'/>
+        <td id='dh15' class='box'/>
+        <td id='dh16' class='box'/>
+        <td id='dh17' class='box'/>
+        <td id='dh18' class='box'/>
+        <td id='dh19' class='box'/>
+        <td id='dh20' class='box'/>
+        <td id='dh21' class='box'/>
+        <td id='dh22' class='box'/>
+        <td id='dh23' class='box'/>
+        <td id='dh24' class='box'/>
+        <td id='dh25' class='box'/>
+        <td id='dh26' class='box'/>
+      </tr>
+      <tr>
+        <td id='dh27' class='box'/>
+        <td id='dh28' class='box'/>
+        <td id='dh29' class='box'/>
+        <td id='dh30' class='box'/>
+        <td id='dh31' class='box'/>
+        <td id='dh32' class='box'/>
+        <td id='dh33' class='box'/>
+        <td id='dh34' class='box'/>
+        <td id='dh35' class='box'/>
+        <td id='dh36' class='box'/>
+        <td id='dh37' class='box'/>
+        <td id='dh38' class='box'/>
+        <td id='dh39' class='box'/>
+      </tr>
+      <tr>
+        <td id='c1' class='box'/>
+        <td id='c2' class='box'/>
+        <td id='c3' class='box'/>
+        <td id='c4' class='box'/>
+        <td id='c5' class='box'/>
+        <td id='c6' class='box'/>
+        <td id='c7' class='box'/>
+        <td id='c8' class='box'/>
+        <td id='c9' class='box'/>
+        <td id='c10' class='box'/>
+        <td id='c11' class='box'/>
+        <td id='c12' class='box'/>
+        <td id='c13' class='box'/>
+      </tr>
+      <tr>
+        <td id='p1' class='box'/>
+        <td id='p2' class='box'/>
+        <td id='p3' class='box'/>
+        <td id='p4' class='box'/>
+        <td id='p5' class='box'/>
+        <td id='p6' class='box'/>
+        <td id='p7' class='box'/>
+        <td id='p8' class='box'/>
+        <td id='p9' class='box'/>
+        <td id='p10' class='box'/>
+        <td id='p11' class='box'/>
+        <td id='p12' class='box'/>
+        <td id='p13' class='box'/>
+      </tr>
+    </table>
     <div id='footer'><a href='https://github.com/trystan/YetAnotherColorPicker.com'>GitHub project</a> &middot; Trystan Spangler &middot; 2013</div>
 
     <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -250,23 +287,23 @@
         $("#b").val(rgb[2]);
 
         // different value
-        for (var i = 1; i < 10; i++)
+        for (var i = 1; i < 16; i++)
         {
-          var c = hsv(h, s, i/10);
+          var c = hsv(h, s, i/16);
           $("#dv" + i).animate({ backgroundColor: c }, speed).attr("title", c);
         }
 
         // different saturation
-        for (var i = 1; i < 10; i++)
+        for (var i = 1; i < 16; i++)
         {
-          var c = hsv(h, i/10, v);
+          var c = hsv(h, i/16, v);
           $("#ds" + i).animate({ backgroundColor: c }, speed).attr("title", c);
         }
 
         // different hue
-        for (var i = 1; i < 28; i++)
+        for (var i = 1; i < 40; i++)
         {
-          var c = hsv(i/28 * 360, (0.75 + s) / 2, (0.75 + v) / 2);
+          var c = hsv(i/40 * 360, (0.75 + s) / 2, (0.75 + v) / 2);
           $("#dh" + i).animate({ backgroundColor: c }, speed).attr("title", c);
         }
 
@@ -281,57 +318,60 @@
           $(id).animate({ backgroundColor: c }, speed).attr("title", c);
         }
 
+        var size = 5;
+        var size0 = size + 1;
+
         // lerp to red
-        for (var i = 1; i < 4; i++)
+        for (var i = 1; i < size0; i++)
         {
-          var c = lerp_rgb(rgb[0], 255, rgb[1], 0, rgb[2], 0, i/4);
-          $("#m" + i).animate({ backgroundColor: c }, speed).attr("title", c);
+          var c = lerp_rgb(rgb[0], 255, rgb[1], 0, rgb[2], 0, i/size0);
+          $("#m" + (0*size+i)).animate({ backgroundColor: c }, speed).attr("title", c);
         }
         // lerp to anti-red
-        for (var i = 1; i < 4; i++)
+        for (var i = 1; i < size0; i++)
         {
-          var c = lerp_rgb(0, rgb[0], 128, rgb[1], 255, rgb[2], i/4);
-          $("#m" + (3+i)).animate({ backgroundColor: c }, speed).attr("title", c);
+          var c = lerp_rgb(0, rgb[0], 128, rgb[1], 255, rgb[2], i/size0);
+          $("#m" + (1*size+i)).animate({ backgroundColor: c }, speed).attr("title", c);
         }
 
         // lerp to orange
-        for (var i = 1; i < 4; i++)
+        for (var i = 1; i < size0; i++)
         {
-          var c = lerp_rgb(rgb[0], 230, rgb[1], 115, rgb[2], 0, i/4);
-          $("#m" + (6+i)).animate({ backgroundColor: c }, speed).attr("title", c);
+          var c = lerp_rgb(rgb[0], 230, rgb[1], 115, rgb[2], 0, i/size0);
+          $("#m" + (2*size+i)).animate({ backgroundColor: c }, speed).attr("title", c);
         }
         // lerp to anti-orange
-        for (var i = 1; i < 4; i++)
+        for (var i = 1; i < size0; i++)
         {
-          var c = lerp_rgb(43, rgb[0], 0, rgb[1], 255, rgb[2], i/4);
-          $("#m" + (9+i)).animate({ backgroundColor: c }, speed).attr("title", c);
+          var c = lerp_rgb(43, rgb[0], 0, rgb[1], 255, rgb[2], i/size0);
+          $("#m" + (3*size+i)).animate({ backgroundColor: c }, speed).attr("title", c);
         }
 
         // lerp to yellow
-        for (var i = 1; i < 4; i++)
+        for (var i = 1; i < size0; i++)
         {
-          var c = lerp_rgb(rgb[0], 255, rgb[1], 255, rgb[2], 0, i/4);
-          $("#m" + (12+i)).animate({ backgroundColor: c }, speed).attr("title", c);
+          var c = lerp_rgb(rgb[0], 255, rgb[1], 255, rgb[2], 0, i/size0);
+          $("#m" + (4*size+i)).animate({ backgroundColor: c }, speed).attr("title", c);
         }
         // lerp to anti-yellow
-        for (var i = 1; i < 4; i++)
+        for (var i = 1; i < size0; i++)
         {
-          var c = lerp_rgb(128, rgb[0], 0, rgb[1], 255, rgb[2], i/4);
-          $("#m" + (15+i)).animate({ backgroundColor: c }, speed).attr("title", c);
+          var c = lerp_rgb(128, rgb[0], 0, rgb[1], 255, rgb[2], i/size0);
+          $("#m" + (5*size+i)).animate({ backgroundColor: c }, speed).attr("title", c);
         }
 
         // lerp to previous color
         var prgb = hexToRgb(hsv(ph, ps, pv).substring(1,7).toUpperCase());
         if (isEven)
         {
-          for (var i = 1; i < 10; i++) {
+          for (var i = 1; i < 14; i++) {
             var c = lerp_rgb(rgb[0], prgb[0], rgb[1], prgb[1], rgb[2], prgb[2], i/10);
             $("#c" + i).animate({ backgroundColor: c }, speed).attr("title", c);
           }
         }
         else
         {
-          for (var i = 1; i < 10; i++) {
+          for (var i = 1; i < 14; i++) {
             var c = lerp_rgb(prgb[0], rgb[0], prgb[1], rgb[1], prgb[2], rgb[2], i/10);
             $("#c" + i).animate({ backgroundColor: c }, speed).attr("title", c);
           }
@@ -339,14 +379,13 @@
         isEven = !isEven;
 
         // add current color
-        var added = false
-        for (var i = 1; i < 10 && added == false; i++) {
+        var added = false;
+        for (var i = 1; i < 14 && added == false; i++) {
           if ($("#p" + i).css("backgroundColor") == "transparent")
           {
             $("#p" + i).css("backgroundColor", hsv(h, s, v));
             added = true;
-          } else if ($("#p" + i).css("backgroundColor") == hsv(h, s, v)) {
-            added = true;
+            break;
           }
         }
         if (!added) {
